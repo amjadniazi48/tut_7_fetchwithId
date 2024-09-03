@@ -3,6 +3,7 @@ import "./globals.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import BoostrapClient from "./components/BootstrapClient";
 const inter = Inter({ subsets: ["latin"] });
 import { AuthProvider } from '@/context/AuthContext';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
       </AuthProvider>
+      <Footer/>
       </body>
     
     

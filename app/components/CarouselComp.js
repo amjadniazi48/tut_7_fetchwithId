@@ -52,7 +52,7 @@ const CarouselComp = () => {
   }, []);
 
   if (!data) return <p>No profile data</p>;
-  console.log("hello  i m here...", data);
+ // console.log("hello  i m here...", data);
   // console.log("this is the dhellata",strapiData)
   // const { title, description, type } = strapiData.data;
   return isLoading ? (
@@ -68,7 +68,7 @@ const CarouselComp = () => {
           return (
             <Carousel.Item>
               <Image
-                width={1500}
+                width={650}
                 height={500}
                 src={API_URL + post.images[0].url}
                 alt={post.images[0].name}
