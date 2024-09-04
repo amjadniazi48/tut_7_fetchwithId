@@ -1,5 +1,5 @@
 import React from "react";
-import { API_URL } from "@/config/index";
+import { NEXT_URL,API_URL } from "@/config/index";
 import Image from "next/image";
 import Link from "next/link";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -22,7 +22,7 @@ const getBlogs = async () => {
     console.log(error);
   }
 };
-const BlogComp = async () => {
+const PostPage  = async () => {
   const data = await getBlogs();
   //console.log("im here agter geeting data",data);
   return (
@@ -36,7 +36,7 @@ const BlogComp = async () => {
               return (
                 <div class="col">
                   <div class="card shadow-sm">
-                <Link href={API_URL +"/post/"+post.slug}>
+                <Link href={`posts/${post.slug}`}>
                 <Image src={API_URL + post.images[0].url} alt ="MyImage"  width={350} height={350}/>
                 </Link>
                       <title>{post.title}</title>
@@ -63,4 +63,4 @@ const BlogComp = async () => {
     </div>
   );
 };
-export default BlogComp;
+export default PostPage ;
